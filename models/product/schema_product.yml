@@ -1,0 +1,27 @@
+version: 2
+
+models:
+    - name: top_10_colour
+      description: "shows top 10 colour count for each month of the year"
+      columns:
+          - name: color_value
+            tests:
+                - not_null
+          - name: count_item
+            description: "the count item with a certain colour"
+            tests:
+                - dbt_expectations.expect_column_min_to_be_between:
+                    min_value: 0
+            
+
+    - name: top_10_category
+      description: "shows top 10 category count for each month of the year"
+      columns:
+          - name: category_value 
+            description: "category name"
+            tests:
+                - not_null
+          - name: count_item
+            tests:
+                - dbt_expectations.expect_column_min_to_be_between:
+                    min_value: 0

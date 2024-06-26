@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  # seed table
+  - name: rugs
+    database: postgres
+    schema: public
+    tables: 
+      - name: rugs_usa_category_map
+      - name: rugs_usa_color_map
+      - name: rugs_usa_links
+      - name: rugs_usa_pads_upsell
+      - name: rugs_usa_parent
+      - name: rugs_usa_variant
+      

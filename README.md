@@ -2,6 +2,9 @@
 
 ```
 sqlfluff fix models/product/top_10_colour.sql -q
+sqlfluff fix models/product/.
+dbt build -m jaffle_shop.product+
+dbt show -m jaffle_shop.product.top_10_category_overall
 ```
 This is a coding exercise to help us assess candidates looking to join the Analytics Engineering team at Ruggable.
 
@@ -90,6 +93,7 @@ docker ps
 Then run 
 ```commandline
 docker exec -it <container-id> /bin/bash
+
 ```
 
 We will then use `psql`, a terminal-based interface for PostgreSQL that allows us to query the database:

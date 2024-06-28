@@ -1,18 +1,11 @@
-# Analytics Engineer: Coding Exercise
-
+# Test code
 ```
 sqlfluff fix models/product/top_10_colour.sql -q
 sqlfluff fix models/product/.
 dbt build -m jaffle_shop.product+
 dbt show -m jaffle_shop.product.top_10_category_overall
 ```
-This is a coding exercise to help us assess candidates looking to join the Analytics Engineering team at Ruggable.
 
-The test is intended to be completed at home, and we expect you to spend no more than 1-4 hours on it. Since this is an unattended test, we would be expecting it to be completed within 48 hours.
-
-If you do not have time to fully complete the exercise or you get stuck, that's fine and not entirely unexpected, just send us as much as you have done.
-
-We look forward to talking through this project with you.
 
 ## Project Prerequisites
 

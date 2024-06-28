@@ -1,4 +1,4 @@
-# Test code
+## Test code
 ```
 sqlfluff fix models/product/top_10_colour.sql -q
 sqlfluff fix models/product/.

@@ -1,0 +1,20 @@
+version: 2
+
+models:
+    - name: out_of_order_item
+      description: "shows top 3 site for each day"
+
+    - name: low_order
+      description: "contains item that are avialable however getting low on supply"
+
+    - name: product_in_warehouse
+      description: "avaliable product in warehouse ready"
+      columns:
+          - name: product_type_id
+            tests:
+                - not_null
+          - name: ct
+            description: "count of item in warehouse"
+            tests:
+                - dbt_expectations.expect_column_min_to_be_between:
+                    min_value: 0

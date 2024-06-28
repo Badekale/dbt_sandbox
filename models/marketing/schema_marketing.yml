@@ -1,0 +1,14 @@
+version: 2
+
+models:
+    - name: visited_site
+      description: "shows top 3 site for each day"
+      columns:
+          - name: page_links
+            tests:
+                - not_null
+          - name: count_item
+            description: "number of time the site was hit"
+            tests:
+                - dbt_expectations.expect_column_min_to_be_between:
+                    min_value: 0

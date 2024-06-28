@@ -25,9 +25,10 @@ models:
     materialized: table
     product:
       schema: product
-  #   marketing:
-  #     +schema: marketing
-  #   operation:
-  #     +schema: operation
+    marketing:
+      +schema: marketing
+    operation:
+      +schema: operation
+      materialized: view
   #     staging:
   #       materialized: view

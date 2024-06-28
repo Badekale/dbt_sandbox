@@ -25,3 +25,41 @@ models:
             tests:
                 - dbt_expectations.expect_column_min_to_be_between:
                     min_value: 0
+
+    - name: top_10_category_overall
+      description: "show amount of item in each category avaiable"
+      columns:
+          - name: category_value 
+            description: "category name"
+            tests:
+                - not_null
+                - dbt_expectations.expect_column_values_to_be_unique:
+                    row_condition: "category_value is not null"
+          - name: count_item
+            description: "total count of item"
+            tests:
+                - dbt_expectations.expect_column_min_to_be_between:
+                    min_value: 0
+    
+    - name: classification_by_origin
+      description: "shows the distribution of product by origin"
+      columns:
+          - name: origin 
+            description: "unique count of item"
+            tests:
+                - not_null
+          - name: category 
+            description: "category name"
+            tests:
+                - not_null
+          - name: ct_internalame 
+            description: "unique count of item"
+            tests:
+                - not_null
+                - dbt_expectations.expect_column_min_to_be_between:
+                    min_value: 0
+          - name: ct
+            description: "total count of item"
+            tests:
+                - dbt_expectations.expect_column_min_to_be_between:
+                    min_value: 0
